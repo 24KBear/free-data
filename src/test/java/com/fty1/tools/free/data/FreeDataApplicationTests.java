@@ -20,6 +20,8 @@ class FreeDataApplicationTests {
     private DataSource dataSource;
     @Test
     void contextLoads() {
+
+
         String sql = "select s.TABLE_NAME from information_schema.TABLES s where s.TABLE_SCHEMA = 'mysql'";
         List<List<RowData>> data = MySQLHelper.navicatSQL(dataSource, new NavicatSQL(sql));
         System.out.printf(JSON.toJSONString(data));
